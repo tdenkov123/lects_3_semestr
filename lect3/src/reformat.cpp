@@ -15,6 +15,10 @@ class Reformat {
         file_old.open("../files/" + filename_old);
         file_new.open("../files/" + filename_new);
     }
+    ~Reformat() {
+        file_new.close();
+        file_old.close();
+    }
 
     int txt_to_gift() {
         bool bracket_open = false;
@@ -37,6 +41,7 @@ class Reformat {
             }
         }
     file_new << "\n}";
+    cout << "Transformation from .txt to .gift done well.";
     }
 };
 
